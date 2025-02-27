@@ -1,5 +1,6 @@
 import requests
 import sys
+import json
 import matplotlib.pyplot as plt
 from prettytable import PrettyTable
 
@@ -50,10 +51,34 @@ def analyze_repos(repos):
         plt.xticks(rotation=45)
         plt.show()
 
+def save_data_as_json(username, user_data, repos):
+    """Save GitHub data to a JSON file"""
+    data = {
+        "user_info": user_data,
+        "repositories": repos
+    }
+    
+    filename = f"{username}_github_data.json"
+    with open(filename, "w", encoding="utf-8") as json_file:
+        json.dump(data, json_file, indent=4)
+    
+    print(f"✅ GitHub data saved as '{filename}'")
+
 if __name__ == "__main__":
     username = input("Enter GitHub username: ").strip()
+    
     user_data = fetch_github_data(username)
     repos = fetch_repos(username)
 
+    # Display data
     display_basic_info(user_data)
-    analyze_repos(repos)
+    
+    # Ask if user wants to save data
+    choice = input("\nDo you want to save this data as a JSON file? (yes/no): ").strip().lower()
+    
+    if choice == "yes":
+        save_data_as_json(username, user_data, repos)
+    else:
+        print("❌ Data not saved. Exiting...")
+    
+    print("\nGitHub Data Extraction Completed Successfully! 🚀")
