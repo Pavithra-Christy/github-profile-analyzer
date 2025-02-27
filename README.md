@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # github-profile-analyzer
-=======
+
 # 🛠 GitHub Profile Analyzer
 
 A Python script to analyze GitHub user profiles, display key metrics, and visualize programming language usage.
