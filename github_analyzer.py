@@ -49,7 +49,7 @@ def analyze_repos(repos):
         plt.ylabel("Number of Repos")
         plt.title("Most Used Programming Languages")
         plt.xticks(rotation=45)
-        plt.show()
+        plt.show(block=False)  # ✅ Make it non-blocking
 
 def save_data_as_json(username, user_data, repos):
     """Save GitHub data to a JSON file"""
@@ -73,7 +73,10 @@ if __name__ == "__main__":
     # Display data
     display_basic_info(user_data)
     
-    # Ask if user wants to save data
+    # Analyze repositories and display graph (non-blocking)
+    analyze_repos(repos)  
+
+    # Ask if user wants to save data while the graph is open
     choice = input("\nDo you want to save this data as a JSON file? (yes/no): ").strip().lower()
     
     if choice == "yes":
