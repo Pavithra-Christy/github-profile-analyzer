@@ -1,6 +1,6 @@
 # 📊 GitHub Profile Analyzer
 
-A **Python CLI tool** that fetches and analyzes GitHub user profiles, displaying key metrics and visualizing programming language usage. Now with **MySQL integration** for storing user data and JSON export for saving profiles locally!
+A **Python CLI tool** that fetches and analyzes GitHub user profiles, displaying key metrics and visualizing programming language usage. With **MySQL integration** for storing user data and JSON export for saving profiles locally!
 
 ## 🚀 Features
 ✅ Fetch **GitHub user statistics** (followers, public repos, etc.)  
