@@ -68,11 +68,7 @@ Run the script and enter a GitHub username when prompted:
 python github_analyzer.py
 ```
 
-<<<<<<< HEAD
 ### 📊 Example Output
-=======
-## 📊 Example Output
->>>>>>> d6ee26680834d84e0757a2efb8d30806729f11a2
 ```
 +--------------+--------------------------+
 | Profile Info | Details                  |
